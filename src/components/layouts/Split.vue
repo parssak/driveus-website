@@ -1,13 +1,17 @@
 <template>
-  <Container :class="dark && 'bg-accent-dark'">
-    <div class="grid gap-x-8 gap-y-12 lg:grid-cols-2">
+  <Container :class="dark && 'bg-accent-darkest'">
+    <div class="grid gap-12 lg:grid-cols-2">
       <section :class="flip && `lg:order-1`" class="lg:py-12">
         <h2 :class="dark && 'text-white'">{{ title }}</h2>
-        <p :class="dark && 'text-white'"><span v-html="description"></span></p>
+        <p class="lg:max-w-md" :class="dark && 'text-white'"><span v-html="description"></span></p>
         <slot name="extra-content"></slot>
       </section>
       <section>
-        <div class="split-img-wrapper w-full h-full rounded-md overflow-hidden">
+        <div class="split-img-wrapper w-full h-full relative">
+          <div
+            class="absolute -top-2 md:-top-4 w-full h-full border border-accent"
+            :class="flip ? '-left-2 md:-left-4' : '-right-2 md:-right-4'"
+          ></div>
           <slot></slot>
         </div>
       </section>
@@ -45,6 +49,7 @@ export default {
 .split-img-wrapper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  /* object-fit: contain; */
+  position: relative;
 }
 </style>

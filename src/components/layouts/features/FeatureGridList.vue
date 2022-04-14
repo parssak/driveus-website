@@ -1,7 +1,7 @@
 <template>
   <Container>
     <div class="max-w-3xl mx-auto text-center">
-      <h2>{{ title }}</h2>
+      <h2 class="mb-4">{{ title }}</h2>
       <p class="text-lg text-gray-500">
         {{ description }}
       </p>
@@ -16,10 +16,11 @@
     >
       <div v-for="feature in features" :key="feature.name" class="relative">
         <dt>
-          <CheckIcon
+          <!-- <CheckIcon
             class="absolute h-6 w-6 text-green-500"
             aria-hidden="true"
-          />
+          /> -->
+          <img :src="feature.icon" class="absolute h-6 w-6" alt="" aria-hidden="true" />
           <p class="ml-9 text-lg leading-6 font-medium text-gray-900">
             {{ feature.name }}
           </p>
