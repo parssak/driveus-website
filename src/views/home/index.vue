@@ -12,9 +12,10 @@
   <!-- Split -->
   <Split
     title="what we do"
-    description="DriveUs is Vancouver’s Premier Luxury Chauffeured Car Service. We offer the latest and most luxurious vehicles driven by professionally trained and locally knowledgeable chauffeurs.
-<br/><br/>
-Featuring Vancouver’s newest luxury fleet of sedans and SUVs. We provide exceptional service from our team of professional chauffeurs. Call us today and set up an account. After all, don’t you deserve the best?"
+    description="
+    DriveUs is Vancouver’s Premier Luxury Chauffeured Car Service. We offer the latest and most luxurious vehicles driven by professionally trained and locally knowledgeable chauffeurs.
+    <br/><br/>
+    Featuring Vancouver’s newest luxury fleet of sedans and SUVs. We provide exceptional service from our team of professional chauffeurs. Call us today and set up an account. After all, don’t you deserve the best?"
     :flip="true"
     :dark="true"
   >
@@ -26,9 +27,30 @@ Featuring Vancouver’s newest luxury fleet of sedans and SUVs. We provide excep
     description="Featuring the most luxurious chauffeured automobiles Vancouver has to offer."
     :features="features"
   />
+  <Container>
+    <div class="border-t border-accent-darkest pt-12">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="mb-4">Driven to exceed your expectation</h2>
+        <p class="text-lg text-gray-500 mx-auto max-w-md md:max-w-full">
+          Professionally chauffeured luxury vehicles to transport you safely, confidentially and in
+          grand style.
+        </p>
+      </div>
+      <div class="mt-6 grid md:grid-cols-3 gap-8">
+        <!-- TODO: LEFT OFF HERE -->
+        <div>
+          <img src="@/assets/images/caddy-left.png" alt="caddy" />
+          <p class="font-semibold">2022 Cadillac Escalade ESV Sport Platinum</p>
+        </div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </Container>
 </template>
 
 <script>
+import Container from "../../components/layouts/Container.vue";
 import FeatureGridList from "../../components/layouts/features/FeatureGridList.vue";
 import HeroImageOverlay from "../../components/layouts/hero/HeroImageOverlay.vue";
 import Header from "@/components/base/Header";
@@ -91,6 +113,7 @@ export default {
     Split,
     HeroImageOverlay,
     FeatureGridList,
+    Container,
   },
   data() {
     return {
