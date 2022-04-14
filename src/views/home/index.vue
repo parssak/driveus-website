@@ -34,44 +34,53 @@ import HeroImageOverlay from "../../components/layouts/hero/HeroImageOverlay.vue
 import Header from "@/components/base/Header";
 import Split from "@/components/layouts/Split.vue";
 
+const BASE_URL = "/driveus-website";
+const getIconURL = (icon) => `${BASE_URL}/icons/${icon}.svg`;
 const features = [
   {
-    icon: ""
     name: "Safety",
+    icon: getIconURL("guard"),
     description:
       "Your comfort and safety are our priority - our licensed drivers are rigorously screened, knowledgeable and fully insured to get you to your final destination.",
   },
   {
     name: "No Hidden Fees",
+    icon: getIconURL("money"),
     description:
       "We don't have an auto-gratuity of 15-20% or a fuel surcharge of 10-15%. No peak time surcharge and no cancellation fee if cancelled within 24 hours.",
   },
   {
     name: "Live GPS Tracking",
+    icon: getIconURL("pin"),
     description: "All our vehicles are equipped with Live GPS Tracking.",
   },
   {
     name: "COVID-19",
+    icon: getIconURL("sparkle"),
     description:
       "Our vehicles are sanitized after each ride with scent-free wipes. Complimentary masks and hand sanitizer. No-touch thermometers. Mandatory screening of drivers daily to ensure your safety.",
   },
   {
     name: "Complimentary Fiji Water",
+    icon: getIconURL("droplet"),
     description:
       "All of our vehicles come stocked with complimentary bottles of Fiji water for your enjoyment.",
   },
   {
     name: "4K HD Dash Cameras",
+    icon: getIconURL("cam"),
     description:
       "All vehicles have 4K HD Dash Cameras to ensure our chauffeurs follow our safety protocols.",
   },
   {
     name: "Dedicated Winter Tires",
+    icon: getIconURL("cloud"),
     description:
       "All of our vehicles are equipped with dedicated winter tires during the winter months.",
   },
   {
     name: "Onboard Wi-Fi + Power",
+    icon: getIconURL("wifi"),
     description:
       "All of our vehicles are equipped with onboard Wi-Fi and power for your convenience.",
   },
