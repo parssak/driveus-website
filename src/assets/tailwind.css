@@ -7,6 +7,9 @@
 
 @tailwind utilities;
 
+html, body {
+  @apply bg-accent-lightest;
+}
 /* #region - Typography -  */
 * {
   font-family: Roboto;
@@ -37,7 +40,7 @@ h4 {
 }
 
 p {
-  @apply text-base font-light leading-relaxed tracking-wide;
+  @apply text-lg font-light leading-relaxed tracking-wide;
 }
 
 ul:not(.unstyled) {
@@ -96,7 +99,7 @@ select {
 }
 
 .btn-light {
-  @apply text-accent bg-accent-light hover:bg-accent-light_hover;
+  @apply text-black ;
 }
 
 .btn-xs {
