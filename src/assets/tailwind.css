@@ -7,7 +7,8 @@
 
 @tailwind utilities;
 
-html, body {
+html,
+body {
   @apply bg-accent-lightest;
 }
 /* #region - Typography -  */
@@ -99,7 +100,7 @@ select {
 }
 
 .btn-light {
-  @apply text-black ;
+  @apply text-black;
 }
 
 .btn-xs {
@@ -147,19 +148,20 @@ select {
                     p-2
                     flex
                     items-center
-                    rounded-md
-                    capitalize
+                    uppercase
+                    tracking-wider
+                    font-light
                     transition
                     hover:bg-accent-light
-                    hover:text-accent-dark;
+                    hover:text-accent-darkest;
 }
 
 .nav-item-mobile__text {
-  @apply ml-3 text-sm lg:text-base font-medium;
+  @apply ml-3 text-sm lg:text-base;
 }
 
 nav a {
-  @apply text-black transition;
+  @apply text-white uppercase font-light tracking-wider transition;
 }
 
 nav a:hover {

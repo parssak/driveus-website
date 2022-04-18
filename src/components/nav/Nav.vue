@@ -1,31 +1,45 @@
 <template>
   <Popover class="fixed left-0 w-full top-0 z-20 bg-transparent shadow">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div
-        class="
-          flex
-          justify-between
-          items-center
-          py-6
-          md:justify-start md:space-x-5
-        "
-      >
-        <div class="flex justify-start lg:w-0 flex-1">
+      <div class="flex justify-between items-center py-6 lg:justify-start">
+        <PopoverGroup as="nav" class="hidden lg:flex space-x-6 xl:space-x-7">
+          <NavItem
+            v-for="item in navigation"
+            :path="item.path"
+            :key="item.label"
+            :dropdownItems="item.dropdownItems"
+          >
+            {{ item.label }}
+          </NavItem>
+        </PopoverGroup>
+        <div class="flex justify-start lg:mx-auto">
           <router-link to="/">
             <span class="sr-only">Company Name</span>
             <div class="flex items-center">
-              <img
-                class="h-9 w-auto"
-                src="@/assets/logo.svg"
-                alt="Company Name"
-              />
+              <img class="h-12 w-auto" src="@/assets/logo.svg" alt="Company Name" />
             </div>
           </router-link>
         </div>
-        <div class="-mr-2 -my-2 md:hidden">
+        <div class="hidden justify-end items-center lg:flex">
+          <a
+            href="tel:+1-778-868-8000"
+            class="
+              block
+              with-underline
+              text-white
+              w-max
+              hover:text-accent
+              tracking-widest
+              font-light
+              mr-4
+            "
+            >+1-778-868-8000
+          </a>
+          <router-link to="/contact" class="btn btn-xl"> Book a car </router-link>
+        </div>
+        <div class="-mr-2 -my-2 lg:hidden">
           <PopoverButton
             class="
-              rounded-md
               p-2
               inline-flex
               items-center
@@ -40,16 +54,6 @@
             <MenuIcon class="h-6 w-6 text-accent" aria-hidden="true" />
           </PopoverButton>
         </div>
-        <PopoverGroup as="nav" class="hidden md:flex space-x-6 xl:space-x-7">
-          <NavItem
-            v-for="item in navigation"
-            :path="item.path"
-            :key="item.label"
-            :dropdownItems="item.dropdownItems"
-          >
-            {{ item.label }}
-          </NavItem>
-        </PopoverGroup>
       </div>
     </div>
 
@@ -63,40 +67,25 @@
     >
       <PopoverPanel
         focus
-        class="
-          absolute
-          top-0
-          inset-x-0
-          z-10
-          p-2
-          transition
-          transform
-          origin-top-right
-          md:hidden
-        "
+        class="absolute top-0 inset-x-0 z-10 p-2 transition transform origin-top-right lg:hidden"
       >
         <div
           class="
-            rounded-lg
             shadow-lg
             ring-1 ring-black ring-opacity-5
-            bg-gray-200
+            bg-accent-darkest
+            text-white
             divide-y-2 divide-gray-50
           "
         >
           <div class="pt-5 pb-6 px-5">
             <div class="flex items-center justify-between">
               <router-link to="/">
-                <img
-                  class="h-5 w-auto"
-                  src="@/assets/logo.svg"
-                  alt="Company name"
-                />
+                <img class="h-9 w-auto" src="@/assets/logo.svg" alt="Company name" />
               </router-link>
               <div class="-mr-2">
                 <PopoverButton
                   class="
-                    rounded-md
                     p-2
                     inline-flex
                     items-center
@@ -121,6 +110,9 @@
                   >
                     <span class="nav-item-mobile__text">{{ item.label }}</span>
                   </router-link>
+                  <router-link to="/contact" class="nav-item-mobile">
+                    <span class="nav-item-mobile__text">book a car</span>
+                  </router-link>
                 </PopoverButton>
               </nav>
             </div>
@@ -134,12 +126,7 @@
 
 <script>
 import NavItem from "@/components/nav/NavItem.vue";
-import {
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-} from "@headlessui/vue";
+import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from "@headlessui/vue";
 import { MenuIcon, XIcon } from "@heroicons/vue/outline";
 import { navigation } from "@/data";
 
@@ -154,7 +141,7 @@ export default {
     NavItem,
   },
   setup() {
-    return { navigation };
+    return { navigation: navigation.filter((n) => !n.path.includes("contact")) };
   },
 };
 </script>
