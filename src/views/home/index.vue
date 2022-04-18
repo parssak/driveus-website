@@ -73,7 +73,7 @@
 
   <FullSplit class="bg-accent-darkest text-accent-lightest">
     <template v-slot:left>
-      <h2 class="md:text-6xl text-white mb-5">guaranteed on time pick up</h2>
+      <h2 class="md:text-5xl text-white mb-5">guaranteed on time pick up</h2>
       <p>
         Professionally chauffeured luxury vehicles to transport you safely, confidentially and in
         grand style.
@@ -185,7 +185,15 @@
         "
       >
         <h3 class="mb-0">Enjoyed our service?</h3>
-        <div class="flex flex-col items-center space-y-4 mt-4 lg:space-y-0 lg:flex-row lg:ml-auto lg:space-x-4">
+        <div
+          class="
+            flex flex-col
+            items-center
+            space-y-4
+            mt-4
+            lg:space-y-0 lg:flex-row lg:ml-auto lg:space-x-4
+          "
+        >
           <button class="btn btn-light btn-xl">Review us on google</button
           ><button class="btn btn-light btn-xl">Review us on facebook</button>
         </div>
