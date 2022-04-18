@@ -30,7 +30,9 @@
           />
           <p class="font-medium text-lg">2022 Cadillac Escalade ESV Sport Platinum</p>
           <p class="mt-1">The Legend Reimagined, Again</p>
-          <button class="mt-4 btn btn-xl btn-light">View this car</button>
+          <router-link to="/cars/caddy-escalade" class="mt-4 btn btn-xl btn-light"
+            >View this car</router-link
+          >
         </div>
         <div class="text-center flex flex-col items-center">
           <img

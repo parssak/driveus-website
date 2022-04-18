@@ -55,5 +55,6 @@ export const cars = [
       "Custom ordered from Cadillac with Night Vision, Fridge/Freezer Centre console, 36 Speaker AKG Reference Audio System, Hyper Cruise and Augmented Reality Navigation.",
     slogan: "POWER AND SOPHISTICATION",
     imgSrc: baseURL + "cars/cadillac/index.png",
+    images: [baseURL + "cars/cadillac/images/1.png", baseURL + "cars/cadillac/images/2.png"],
   },
 ];
