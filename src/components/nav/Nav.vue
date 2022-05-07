@@ -3,7 +3,10 @@
     class="fixed left-0 w-full top-0 z-20 transition-all"
     :class="top ? 'bg-transparent' : 'bg-accent-darkest'"
   >
-    <div class="transition-all max-w-7xl mx-auto px-4 sm:px-6 border-b" :class="top ? '' : 'border-transparent'">
+    <div
+      class="transition-all max-w-7xl mx-auto px-4 sm:px-6 border-b"
+      :class="top ? '' : 'border-transparent'"
+    >
       <div class="flex justify-between items-center py-6 lg:justify-start">
         <PopoverGroup as="nav" class="hidden lg:flex space-x-6 xl:space-x-7">
           <NavItem
@@ -145,7 +148,7 @@ export default {
   },
   data() {
     return {
-      top: false,
+      top: true,
     };
   },
   // listen to top of page to close nav
